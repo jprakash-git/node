@@ -14,6 +14,8 @@ app.get("/riders", (req, res) => {
     res.send(JSON.stringify(riders));
 })
 
-app.listen(5000, () => {
-    console.log("Server started at port 5000...");
+const PORT = process.env.PORT || 3000;
+
+app.listen(PORT, () => {
+  console.log(`Server is listening on port ${PORT}`);
 });
