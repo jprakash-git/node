@@ -1,3 +1,4 @@
+
 version: 0.2
 
 phases:
@@ -6,14 +7,20 @@ phases:
       nodejs: latest
     commands:
       - npm install -g typescript
+  pre_build:
+    commands:
+      - echo Installing source NPM dependencies...
       - npm install
   build:
     commands:
-      - tsc
-
+      - echo Build started on `date`
+      - npm run build
+  post_build:
+    commands:
+      - echo Build completed on `date`
 artifacts:
   files:
+    - dist/**/*
     - package.json
     - package-lock.json
-    - 'dist/**/*'
-  discard-paths: yes
+    - node_modules/**/*
