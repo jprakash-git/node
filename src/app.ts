@@ -6,7 +6,7 @@ const riders = ['rider13', 'rider2', 'rider3'];
 
 app.get("/", (req, res) => {
     console.log('api called')
-    res.status(200).send("Hello World1144!");
+    res.status(200).send("Welcome to LoanKone");
 });
 
 app.get("/riders", (req, res) => {
